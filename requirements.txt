@@ -1,11 +1,10 @@
-# Web Framework
-Flask==2.3.3
-gunicorn==21.2.0  # Opsional: Untuk production WSGI server
+Flask
+gunicorn  # Opsional: Untuk production WSGI server
 
 # Machine Learning & Data Science
-scikit-learn==1.3.0
-pandas==2.0.3
-numpy==1.25.2
+scikit-learn
+pandas
+numpy
 
 # Utilities dan Serialization
-joblib==1.3.2  # Untuk menyimpan/memuat model ML
+joblib

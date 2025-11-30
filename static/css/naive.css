@@ -1,0 +1,170 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+}
+
+/* Background + padding agar tidak ketutup navbar */
+body {
+  background: linear-gradient(135deg, #f9f3f3, #e0c3c3);
+  min-height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;    /* supaya mulai dari atas */
+  padding: 140px 20px 20px;   /* ruang untuk navbar fixed */
+}
+
+/* 🔥 NAVBAR FIXED */
+nav {
+  background: #7a0000;
+  padding: 16px 40px;
+  box-shadow: 0 3px 12px rgba(0, 0, 0, 0.25);
+
+  position: fixed;   /* penting */
+  top: 0;
+  left: 0;
+  width: 100%;
+  z-index: 1000;      /* biar paling atas */
+}
+
+nav ul {
+  list-style: none;
+  display: flex;
+  gap: 28px;
+}
+
+nav a {
+  color: white;
+  text-decoration: none;
+  font-weight: 600;
+  font-size: 18px;
+  padding: 8px 14px;
+  border-radius: 8px;
+  transition: background 0.3s, transform 0.2s;
+}
+
+nav a:hover {
+  background: rgba(255, 255, 255, 0.25);
+  transform: translateY(-2px);
+}
+
+/* Container utama */
+.container {
+  background: white;
+  border-radius: 16px;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.15);
+  width: 100%;
+  max-width: 800px;
+  padding: 30px;
+}
+
+h1 {
+  text-align: center;
+  color: #8b0000;
+  margin-bottom: 15px;
+  font-size: 28px;
+}
+
+.accuracy {
+  text-align: center;
+  background: #fff8f8;
+  padding: 10px;
+  border-radius: 8px;
+  margin-bottom: 20px;
+  color: #c00;
+  font-weight: bold;
+}
+
+/* Form grid */
+.form-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 16px;
+  margin-bottom: 20px;
+}
+
+.input-group {
+  display: flex;
+  flex-direction: column;
+}
+
+label {
+  font-weight: 600;
+  color: #444;
+  font-size: 13px;
+  margin-bottom: 5px;
+}
+
+input[type="number"] {
+  width: 100%;
+  padding: 8px 10px;
+  border: 1px solid #ccc;
+  border-radius: 6px;
+  font-size: 14px;
+}
+
+button {
+  padding: 12px;
+  background: #8b0000;
+  color: white;
+  border: none;
+  border-radius: 8px;
+  font-size: 16px;
+  font-weight: bold;
+  cursor: pointer;
+  transition: background 0.3s;
+  width: 100%;
+}
+
+button:hover {
+  background: #a50000;
+}
+
+.result {
+  margin-top: 25px;
+  padding: 18px;
+  border-radius: 10px;
+  background: #fff0f0;
+  border-left: 4px solid #8b0000;
+}
+
+.result h3 {
+  color: #8b0000;
+  margin-bottom: 10px;
+}
+
+.prob-list {
+  list-style: none;
+  margin-top: 8px;
+}
+
+.prob-list li {
+  padding: 4px 0;
+  font-family: monospace;
+}
+
+.error {
+  background: #ffeaea;
+  color: #c00;
+  padding: 15px;
+  border-radius: 8px;
+  margin-top: 20px;
+}
+
+/* Responsif */
+@media (max-width: 768px) {
+  .form-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (max-width: 480px) {
+  .form-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .container {
+    padding: 20px;
+  }
+}

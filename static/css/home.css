@@ -1,0 +1,88 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+}
+
+body {
+  background: linear-gradient(135deg, #f9eaea, #d9b3b3);
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+}
+
+/* Navbar */
+nav {
+  background: #7a0000;
+  padding: 16px 40px;
+  box-shadow: 0 3px 12px rgba(0, 0, 0, 0.25);
+}
+nav ul {
+  list-style: none;
+  display: flex;
+  gap: 28px;
+}
+nav a {
+  color: white;
+  text-decoration: none;
+  font-weight: 600;
+  font-size: 18px;
+  padding: 8px 14px;
+  border-radius: 8px;
+  transition: background 0.3s, transform 0.2s;
+}
+nav a:hover {
+  background: rgba(255, 255, 255, 0.25);
+  transform: translateY(-2px);
+}
+
+/* Container dengan efek glass */
+.container {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  padding: 40px 20px;
+}
+
+.glass-box {
+  background: rgba(255, 255, 255, 0.45);
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+  border-radius: 18px;
+  padding: 40px 30px;
+  max-width: 700px;
+  width: 90%;
+  text-align: center;
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.15);
+  animation: fadeIn 0.8s ease;
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+h1 {
+  color: #7a0000;
+  font-size: 38px;
+  margin-bottom: 20px;
+  font-weight: 700;
+}
+p {
+  color: #444;
+  font-size: 18px;
+  line-height: 1.7;
+}
+.logo {
+  font-size: 60px;
+  margin-bottom: 20px;
+}

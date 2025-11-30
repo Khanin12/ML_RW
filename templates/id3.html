@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>🌳 ID3 Wine Quality Predictor</title>
+    <style>
+      
+    </style>
+    <link rel="stylesheet" href="/static/css/id3.css" />
+  </head>
+  <body>
+    <nav>
+      <ul>
+        <li><a href="/">Beranda</a></li>
+        <li><a href="/wine">Prediksi Wine Quality</a></li>
+        <li><a href="/id3">ID3 Decision Tree</a></li>
+      </ul>
+    </nav>
+
+    <div class="container">
+      <h1>🌳 Prediksi Kualitas Wine (ID3 Decision Tree)</h1>
+
+      <div class="accuracy">
+        Akurasi Model ID3: <strong>{{ "%.1f"|format(accuracy * 100) }}%</strong>
+      </div>
+
+      <form method="POST" action="/id3/predict">
+        <div class="form-grid">
+          {% for feature in feature_names %}
+          <div class="input-group">
+            <label for="{{ feature }}">{{ feature }}:</label>
+            <input type="number" step="any" name="{{ feature }}" required />
+          </div>
+          {% endfor %}
+        </div>
+        <button type="submit">Prediksi dengan ID3</button>
+      </form>
+
+      {% if error %}
+      <div class="error">{{ error }}</div>
+      {% endif %} {% if prediction %}
+      <div class="result">
+        <h3>Hasil Prediksi ID3</h3>
+        <p>
+          <strong>Kualitas Prediksi:</strong>
+          <span style="font-size: 24px; color: #2e7d32">{{ prediction }}</span>
+        </p>
+        <p><strong>Probabilitas per Kelas:</strong></p>
+        <ul class="prob-list">
+          {% for quality, prob in probabilities.items() %}
+          <li>Kualitas {{ quality }}: {{ "{:.2f}%".format(prob * 100) }}</li>
+          {% endfor %}
+        </ul>
+      </div>
+      {% endif %}
+    </div>
+  </body>
+</html>
